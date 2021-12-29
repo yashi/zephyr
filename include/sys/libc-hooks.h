@@ -16,7 +16,7 @@
  * that need to call into the kernel as system calls
  */
 
-#if defined(CONFIG_NEWLIB_LIBC) || defined(CONFIG_ARCMWDT_LIBC)
+#if defined(CONFIG_NEWLIB_LIBC) || defined(CONFIG_ARCMWDT_LIBC) || defined(CONFIG_PICOLIBC)
 
 /* syscall generation ignores preprocessor, ensure this is defined to ensure
  * we don't have compile errors
