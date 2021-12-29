@@ -2,8 +2,8 @@
 
 if(NOT CONFIG_EXTERNAL_LIBC)
 add_subdirectory(libc)
-add_subdirectory(posix)
 endif()
+add_subdirectory(posix)
 add_subdirectory(gui)
 add_subdirectory(os)
 add_subdirectory(util)
