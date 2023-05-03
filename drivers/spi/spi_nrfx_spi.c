@@ -255,8 +255,10 @@ static int transceive(const struct device *dev,
 			 */
 			finish_transaction(dev, -ETIMEDOUT);
 
+#if CONFIG_MULTITHREADING
 			/* Clean up the driver state. */
 			k_sem_reset(&dev_data->ctx.sync);
+#endif
 		}
 	}
 
