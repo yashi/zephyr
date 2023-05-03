@@ -419,8 +419,10 @@ static int transceive(const struct device *dev,
 			 */
 			finish_transaction(dev, -ETIMEDOUT);
 
+#if CONFIG_MULTITHREADING
 			/* Clean up the driver state. */
 			k_sem_reset(&dev_data->ctx.sync);
+#endif
 #ifdef CONFIG_SOC_NRF52832_ALLOW_SPIM_DESPITE_PAN_58
 			anomaly_58_workaround_clear(dev_data);
 #endif
